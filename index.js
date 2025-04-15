@@ -2,6 +2,17 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 const mongoose = require('mongoose');
+const express = require('express');
+const path = require('path');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on http://localhost:3000');
+});
 
 const userSchema = new mongoose.Schema({
   name: {
